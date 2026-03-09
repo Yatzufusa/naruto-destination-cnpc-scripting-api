@@ -47,7 +47,7 @@ nav:
     - Kekkei Genkai: api/kekkei-genkai.md
     - Clan Checks: api/clan-checks.md
     - Bijuu: api/bijuu.md
-    - Abilities: api/abilities.md
+    - Modes: api/modes.md
     - Helpers: api/helpers.md
   - NPC Jutsu API:
     - Standard Jutsus: api/jutsus.md
