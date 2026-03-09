@@ -33,18 +33,18 @@ function tick(event) {
 
 ## Player Stats
 
-| Page | |
-|---|---|
-| [General Stats](api/general-stats.md) | Level, skill points, jutsu points, intelligence |
-| [Skills](api/skills.md) | Ninjutsu, Taijutsu, Genjutsu, and the other combat skills |
-| [Chakra & Health](api/chakra-health.md) | Chakra pool, health stat, health caps |
+| Page                                          | |
+|-----------------------------------------------|---|
+| [General Stats](api/general-stats.md)         | Level, skill points, jutsu points, intelligence |
+| [Skills](api/skills.md)                       | Ninjutsu, Taijutsu, Genjutsu, and the other combat skills |
+| [Chakra & Health](api/chakra-health.md)       | Chakra pool, health stat, health caps |
 | [Clan & Affiliation](api/clan-affiliation.md) | Clan, rank, village, land |
-| [Nature Releases](api/nature-releases.md) | Fire, Water, Wind, Earth, Lightning, Yin, Yang |
-| [Kekkei Genkai](api/kekkei-genkai.md) | Wood, Lava, Ice, Sharingan, Byakugan, etc. |
-| [Clan Checks](api/clan-checks.md) | Boolean clan membership checks |
-| [Bijuu](api/bijuu.md) | Tailed beast type, unlock progress, scale |
-| [Abilities](api/abilities.md) | Sage Mode, Susanoo, Curse Seal, Eight Gates, etc. |
-| [Helpers](api/helpers.md) | Arrays of known releases, clans, bijuu |
+| [Nature Releases](api/nature-releases.md)     | Fire, Water, Wind, Earth, Lightning, Yin, Yang |
+| [Kekkei Genkai](api/kekkei-genkai.md)         | Wood, Lava, Ice, Sharingan, Byakugan, etc. |
+| [Clan Checks](api/clan-checks.md)             | Boolean clan membership checks |
+| [Bijuu](api/bijuu.md)                         | Tailed beast type, unlock progress, scale |
+| [Modes](api/modes.md)                         | Sage Mode, Susanoo, Curse Seal, Eight Gates, etc. |
+| [Helpers](api/helpers.md)                     | Arrays of known releases, clans, bijuu |
 
 ## NPC Jutsus
 
