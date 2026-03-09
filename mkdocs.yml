@@ -1,0 +1,57 @@
+site_name: Naruto Destination - CustomNPC+ Scripting API
+site_description: API reference for scripting Naruto Destination with CustomNPC+
+site_url: https://yatzufusa.github.io/naruto-destination-cnpc-scripting-api/
+
+theme:
+  name: material
+  palette:
+    - scheme: slate
+      primary: deep orange
+      accent: orange
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+    - scheme: default
+      primary: deep orange
+      accent: orange
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+  features:
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - content.code.copy
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  - attr_list
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - Player Stats API:
+    - General Stats: api/general-stats.md
+    - Skills: api/skills.md
+    - Chakra & Health: api/chakra-health.md
+    - Clan & Affiliation: api/clan-affiliation.md
+    - Nature Releases: api/nature-releases.md
+    - Kekkei Genkai: api/kekkei-genkai.md
+    - Clan Checks: api/clan-checks.md
+    - Bijuu: api/bijuu.md
+    - Abilities: api/abilities.md
+    - Helpers: api/helpers.md
+  - NPC Jutsu API:
+    - Standard Jutsus: api/jutsus.md
+    - Continuous Jutsus: api/continuous-jutsus.md
+    - Jutsu Utilities: api/jutsu-utilities.md
+  - Script Examples: examples.md
+  - Tips & Troubleshooting: tips.md
