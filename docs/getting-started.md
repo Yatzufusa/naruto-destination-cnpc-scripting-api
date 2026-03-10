@@ -2,8 +2,8 @@
 
 ## Requirements
 
-- **Naruto Destination** mod on your server
-- **CustomNPC+** mod on your server (not the original CustomNPC)
+- **[Naruto Destination](https://www.curseforge.com/minecraft/mc-mods/naruto-destination)** mod on your server
+- **[CustomNPC+](https://www.curseforge.com/minecraft/mc-mods/customnpc-plus)** mod on your server (not the original CustomNPC)
 - **[nashorn.jar](https://www.curseforge.com/minecraft/mc-mods/nashorn-1-7-10/files/2924946)** in your `mods` folder — adds JavaScript scripting to CustomNPC+
 
 If you don't see a scripting language option in the NPC scripting tab, you're missing nashorn.
