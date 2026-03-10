@@ -1,0 +1,1473 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="API reference for scripting Naruto Destination with CustomNPC+">
+      
+      
+      
+        <link rel="canonical" href="https://yatzufusa.github.io/naruto-destination-cnpc-scripting-api/api/jutsu-handler/">
+      
+      
+        <link rel="prev" href="../helpers/">
+      
+      
+        <link rel="next" href="../jutsus/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>Jutsu Handler (All-in-One) - Naruto Destination - CustomNPC+ Scripting API</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#jutsu-handler-all-in-one" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Naruto Destination - CustomNPC+ Scripting API" class="md-header__button md-logo" aria-label="Naruto Destination - CustomNPC+ Scripting API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Naruto Destination - CustomNPC+ Scripting API
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Jutsu Handler (All-in-One)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="orange"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Naruto Destination - CustomNPC+ Scripting API" class="md-nav__button md-logo" aria-label="Naruto Destination - CustomNPC+ Scripting API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Naruto Destination - CustomNPC+ Scripting API
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Player Stats API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Player Stats API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../general-stats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    General Stats
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../skills/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skills
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chakra-health/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chakra & Health
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../clan-affiliation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Clan & Affiliation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nature-releases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nature Releases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kekkei-genkai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kekkei Genkai
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../clan-checks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Clan Checks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bijuu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bijuu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../helpers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Helpers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NPC Jutsu API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    NPC Jutsu API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Jutsu Handler (All-in-One)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Jutsu Handler (All-in-One)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#standard-jutsus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Standard Jutsus
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Standard Jutsus">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#available-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Available Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#magnet-gold-push-continuous" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Magnet Gold Push (Continuous)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Magnet Gold Push (Continuous)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#magnetpushnpc-magnetpushnpc-damage-magnetpushnpc-damage-cooldown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        magnetPush(npc) / magnetPush(npc, damage) / magnetPush(npc, damage, cooldown)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#magnetpushpercentnpc-base-percent-magnetpushpercentnpc-base-percent-cooldown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        magnetPushPercent(npc, base, percent) / magnetPushPercent(npc, base, percent, cooldown)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#magnetpushupdatenpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        magnetPushUpdate(npc)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#magnetpushisactivenpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        magnetPushIsActive(npc)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#magnetpushstopnpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        magnetPushStop(npc)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jutsu-block-breaking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Jutsu Block Breaking
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-multi-jutsu-boss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Multi-Jutsu Boss
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#handler-vs-individual-imports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Handler vs Individual Imports
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jutsus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Standard Jutsus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../continuous-jutsus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Continuous Jutsus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jutsu-utilities/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Jutsu Utilities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Script Examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tips/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tips & Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#standard-jutsus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Standard Jutsus
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Standard Jutsus">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#available-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Available Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#magnet-gold-push-continuous" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Magnet Gold Push (Continuous)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Magnet Gold Push (Continuous)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#magnetpushnpc-magnetpushnpc-damage-magnetpushnpc-damage-cooldown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        magnetPush(npc) / magnetPush(npc, damage) / magnetPush(npc, damage, cooldown)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#magnetpushpercentnpc-base-percent-magnetpushpercentnpc-base-percent-cooldown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        magnetPushPercent(npc, base, percent) / magnetPushPercent(npc, base, percent, cooldown)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#magnetpushupdatenpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        magnetPushUpdate(npc)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#magnetpushisactivenpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        magnetPushIsActive(npc)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#magnetpushstopnpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        magnetPushStop(npc)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jutsu-block-breaking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Jutsu Block Breaking
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-multi-jutsu-boss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Multi-Jutsu Boss
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#handler-vs-individual-imports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Handler vs Individual Imports
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="jutsu-handler-all-in-one">Jutsu Handler (All-in-One)<a class="headerlink" href="#jutsu-handler-all-in-one" title="Permanent link">&para;</a></h1>
+<p>Instead of importing each jutsu class separately, you can import <code>CustomNPCJutsuHandler</code> and call everything through it.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">jutsu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Java</span><span class="p">.</span><span class="nx">type</span><span class="p">(</span><span class="s2">&quot;narutodestination.Mathioks.CNPC.CustomNPCJutsuHandler&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p>This one import gives you access to all standard jutsus, Magnet Push, and jutsu block breaking.</p>
+<h2 id="standard-jutsus">Standard Jutsus<a class="headerlink" href="#standard-jutsus" title="Permanent link">&para;</a></h2>
+<p>Every standard jutsu has the same three method patterns. Using fireball as an example:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">jutsu</span><span class="p">.</span><span class="nx">fireball</span><span class="p">(</span><span class="nx">npc</span><span class="p">)</span><span class="w">                      </span><span class="c1">// default damage + cooldown</span>
+<span class="nx">jutsu</span><span class="p">.</span><span class="nx">fireball</span><span class="p">(</span><span class="nx">npc</span><span class="p">,</span><span class="w"> </span><span class="mf">50.0</span><span class="p">)</span><span class="w">               </span><span class="c1">// custom damage</span>
+<span class="nx">jutsu</span><span class="p">.</span><span class="nx">fireball</span><span class="p">(</span><span class="nx">npc</span><span class="p">,</span><span class="w"> </span><span class="mf">50.0</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">)</span><span class="w">          </span><span class="c1">// custom damage + cooldown (20 ticks = 1 sec)</span>
+<span class="nx">jutsu</span><span class="p">.</span><span class="nx">fireballPercent</span><span class="p">(</span><span class="nx">npc</span><span class="p">,</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">)</span><span class="w">    </span><span class="c1">// 5 base + 50% of target&#39;s max HP</span>
+<span class="nx">jutsu</span><span class="p">.</span><span class="nx">fireballPercent</span><span class="p">(</span><span class="nx">npc</span><span class="p">,</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">,</span><span class="w"> </span><span class="mf">60</span><span class="p">)</span><span class="w"> </span><span class="c1">// same with custom cooldown</span>
+</code></pre></div>
+<p>All return <code>boolean</code> — <code>true</code> if the jutsu was cast, <code>false</code> if it was on cooldown.</p>
+<h3 id="available-methods">Available Methods<a class="headerlink" href="#available-methods" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Jutsu</th>
+<th>Method Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fireball</td>
+<td><code>fireball</code> / <code>fireballPercent</code></td>
+<td>Large fireball projectile</td>
+</tr>
+<tr>
+<td>Fire Bullet</td>
+<td><code>fireBullet</code> / <code>fireBulletPercent</code></td>
+<td>Explosive fire bullet</td>
+</tr>
+<tr>
+<td>Water Bullet</td>
+<td><code>waterBullet</code> / <code>waterBulletPercent</code></td>
+<td>Triple water bullet barrage (3x damage in water)</td>
+</tr>
+<tr>
+<td>Lightning Ball</td>
+<td><code>lightningBall</code> / <code>lightningBallPercent</code></td>
+<td>Electric projectile with stun + AOE in water</td>
+</tr>
+<tr>
+<td>Meteor</td>
+<td><code>meteor</code> / <code>meteorPercent</code></td>
+<td>Massive meteor from the sky (Tengai)</td>
+</tr>
+<tr>
+<td>Boil Meltdown</td>
+<td><code>boilMeltdown</code> / <code>boilMeltdownPercent</code></td>
+<td>Explosive projectile with fire + poison</td>
+</tr>
+<tr>
+<td>Crystal Dragon</td>
+<td><code>crystalDragon</code> / <code>crystalDragonPercent</code></td>
+<td>Crystal dragon projectile</td>
+</tr>
+<tr>
+<td>Dust Cube</td>
+<td><code>dustCube</code> / <code>dustCubePercent</code></td>
+<td>Particle style cube explosion</td>
+</tr>
+<tr>
+<td>Clay Birds</td>
+<td><code>clayBirds</code> / <code>clayBirdsPercent</code></td>
+<td>C1 explosive clay birds</td>
+</tr>
+<tr>
+<td>Lava Rock</td>
+<td><code>lavaRock</code> / <code>lavaRockPercent</code></td>
+<td>Lava rock with fire spread</td>
+</tr>
+<tr>
+<td>Ice Needles</td>
+<td><code>iceNeedles</code> / <code>iceNeedlesPercent</code></td>
+<td>9 ice needles in spread pattern</td>
+</tr>
+<tr>
+<td>Storm Demon</td>
+<td><code>stormDemon</code> / <code>stormDemonPercent</code></td>
+<td>Storm cloud with AOE damage + slowness</td>
+</tr>
+<tr>
+<td>Scorch Ring</td>
+<td><code>scorchRing</code> / <code>scorchRingPercent</code></td>
+<td>4 homing fireballs with fire + weakness</td>
+</tr>
+<tr>
+<td>Steel Projectile</td>
+<td><code>steelProjectile</code> / <code>steelProjectilePercent</code></td>
+<td>Steel projectile</td>
+</tr>
+<tr>
+<td>Wood Dragon</td>
+<td><code>woodDragon</code> / <code>woodDragonPercent</code></td>
+<td>Wood dragon with explosion + slowness</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="magnet-gold-push-continuous">Magnet Gold Push (Continuous)<a class="headerlink" href="#magnet-gold-push-continuous" title="Permanent link">&para;</a></h2>
+<p>Continuous jutsu — fires gold dust repeatedly for a short burst. Needs <code>magnetPushUpdate()</code> called every tick.</p>
+<h3 id="magnetpushnpc-magnetpushnpc-damage-magnetpushnpc-damage-cooldown">magnetPush(npc) / magnetPush(npc, damage) / magnetPush(npc, damage, cooldown)<a class="headerlink" href="#magnetpushnpc-magnetpushnpc-damage-magnetpushnpc-damage-cooldown" title="Permanent link">&para;</a></h3>
+<p>Start the jutsu.</p>
+<div class="highlight"><pre><span></span><code><span class="nx">jutsu</span><span class="p">.</span><span class="nx">magnetPush</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">npc</span><span class="p">);</span>
+<span class="nx">jutsu</span><span class="p">.</span><span class="nx">magnetPush</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">npc</span><span class="p">,</span><span class="w"> </span><span class="mf">8.0</span><span class="p">);</span>
+<span class="nx">jutsu</span><span class="p">.</span><span class="nx">magnetPush</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">npc</span><span class="p">,</span><span class="w"> </span><span class="mf">8.0</span><span class="p">,</span><span class="w"> </span><span class="mf">60</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="magnetpushpercentnpc-base-percent-magnetpushpercentnpc-base-percent-cooldown">magnetPushPercent(npc, base, percent) / magnetPushPercent(npc, base, percent, cooldown)<a class="headerlink" href="#magnetpushpercentnpc-base-percent-magnetpushpercentnpc-base-percent-cooldown" title="Permanent link">&para;</a></h3>
+<p>Start with percentage-based damage.</p>
+<div class="highlight"><pre><span></span><code><span class="nx">jutsu</span><span class="p">.</span><span class="nx">magnetPushPercent</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">npc</span><span class="p">,</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.3</span><span class="p">);</span><span class="w"> </span><span class="c1">// 5 base + 30% of target max HP</span>
+</code></pre></div>
+<h3 id="magnetpushupdatenpc">magnetPushUpdate(npc)<a class="headerlink" href="#magnetpushupdatenpc" title="Permanent link">&para;</a></h3>
+<p><strong>Must be called every tick.</strong> Without this, the jutsu won't fire.</p>
+<div class="highlight"><pre><span></span><code><span class="nx">jutsu</span><span class="p">.</span><span class="nx">magnetPushUpdate</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">npc</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="magnetpushisactivenpc">magnetPushIsActive(npc)<a class="headerlink" href="#magnetpushisactivenpc" title="Permanent link">&para;</a></h3>
+<p>Returns <code>true</code> if the jutsu is currently firing.</p>
+<h3 id="magnetpushstopnpc">magnetPushStop(npc)<a class="headerlink" href="#magnetpushstopnpc" title="Permanent link">&para;</a></h3>
+<p>Force stop the jutsu.</p>
+<hr />
+<h2 id="jutsu-block-breaking">Jutsu Block Breaking<a class="headerlink" href="#jutsu-block-breaking" title="Permanent link">&para;</a></h2>
+<p>Same methods as the <a href="../jutsu-utilities/">Jutsu Utilities</a> page, accessible through the handler.</p>
+<div class="highlight"><pre><span></span><code><span class="nx">jutsu</span><span class="p">.</span><span class="nx">breakJutsuBlocks</span><span class="p">(</span><span class="nx">npc</span><span class="p">)</span><span class="w">                          </span><span class="c1">// defaults: radius 5, cooldown 40, effects on</span>
+<span class="nx">jutsu</span><span class="p">.</span><span class="nx">breakJutsuBlocks</span><span class="p">(</span><span class="nx">npc</span><span class="p">,</span><span class="w"> </span><span class="nx">radius</span><span class="p">)</span>
+<span class="nx">jutsu</span><span class="p">.</span><span class="nx">breakJutsuBlocks</span><span class="p">(</span><span class="nx">npc</span><span class="p">,</span><span class="w"> </span><span class="nx">radius</span><span class="p">,</span><span class="w"> </span><span class="nx">cooldown</span><span class="p">)</span>
+<span class="nx">jutsu</span><span class="p">.</span><span class="nx">breakJutsuBlocks</span><span class="p">(</span><span class="nx">npc</span><span class="p">,</span><span class="w"> </span><span class="nx">radius</span><span class="p">,</span><span class="w"> </span><span class="nx">cooldown</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">)</span><span class="w">  </span><span class="c1">// silent (no effects)</span>
+<span class="nx">jutsu</span><span class="p">.</span><span class="nx">breakJutsuBlocksSphere</span><span class="p">(</span><span class="nx">npc</span><span class="p">,</span><span class="w"> </span><span class="nx">radius</span><span class="p">,</span><span class="w"> </span><span class="nx">cooldown</span><span class="p">)</span>
+<span class="nx">jutsu</span><span class="p">.</span><span class="nx">breakJutsuBlocksSphere</span><span class="p">(</span><span class="nx">npc</span><span class="p">,</span><span class="w"> </span><span class="nx">radius</span><span class="p">,</span><span class="w"> </span><span class="nx">cooldown</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">)</span>
+
+<span class="nx">jutsu</span><span class="p">.</span><span class="nx">hasJutsuBlocksNearby</span><span class="p">(</span><span class="nx">npc</span><span class="p">,</span><span class="w"> </span><span class="nx">radius</span><span class="p">)</span><span class="w">   </span><span class="c1">// boolean</span>
+<span class="nx">jutsu</span><span class="p">.</span><span class="nx">countJutsuBlocks</span><span class="p">(</span><span class="nx">npc</span><span class="p">,</span><span class="w"> </span><span class="nx">radius</span><span class="p">)</span><span class="w">       </span><span class="c1">// int</span>
+
+<span class="nx">jutsu</span><span class="p">.</span><span class="nx">isBlockBreakerOnCooldown</span><span class="p">(</span><span class="nx">npc</span><span class="p">)</span><span class="w">       </span><span class="c1">// boolean</span>
+<span class="nx">jutsu</span><span class="p">.</span><span class="nx">clearBlockBreakerCooldown</span><span class="p">(</span><span class="nx">npc</span><span class="p">)</span>
+
+<span class="nx">jutsu</span><span class="p">.</span><span class="nx">playBlockBreakEffects</span><span class="p">(</span><span class="nx">npc</span><span class="p">,</span><span class="w"> </span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="p">,</span><span class="w"> </span><span class="nx">z</span><span class="p">)</span>
+<span class="nx">jutsu</span><span class="p">.</span><span class="nx">playBlockBreakEffectsAtNpc</span><span class="p">(</span><span class="nx">npc</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h2 id="example-multi-jutsu-boss">Example: Multi-Jutsu Boss<a class="headerlink" href="#example-multi-jutsu-boss" title="Permanent link">&para;</a></h2>
+<p>Using the handler you only need one import for everything:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">jutsu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Java</span><span class="p">.</span><span class="nx">type</span><span class="p">(</span><span class="s2">&quot;narutodestination.Mathioks.CNPC.CustomNPCJutsuHandler&quot;</span><span class="p">);</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">init</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">event</span><span class="p">.</span><span class="nx">npc</span><span class="p">.</span><span class="nx">setStoredData</span><span class="p">(</span><span class="s2">&quot;phase&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">tick</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">npc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">event</span><span class="p">.</span><span class="nx">npc</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">target</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">npc</span><span class="p">.</span><span class="nx">getAttackTarget</span><span class="p">();</span>
+<span class="w">    </span><span class="nx">jutsu</span><span class="p">.</span><span class="nx">magnetPushUpdate</span><span class="p">(</span><span class="nx">npc</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">target</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">hp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">npc</span><span class="p">.</span><span class="nx">getHealth</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nx">npc</span><span class="p">.</span><span class="nx">getMaxHealth</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// Phase transition at 50% HP</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">hp</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">npc</span><span class="p">.</span><span class="nx">getStoredData</span><span class="p">(</span><span class="s2">&quot;phase&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">npc</span><span class="p">.</span><span class="nx">setStoredData</span><span class="p">(</span><span class="s2">&quot;phase&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">npc</span><span class="p">.</span><span class="nx">say</span><span class="p">(</span><span class="s2">&quot;\u00a75You&#39;ve pushed me this far...&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Clear jutsu blocks</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">jutsu</span><span class="p">.</span><span class="nx">hasJutsuBlocksNearby</span><span class="p">(</span><span class="nx">npc</span><span class="p">,</span><span class="w"> </span><span class="mf">6</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">jutsu</span><span class="p">.</span><span class="nx">breakJutsuBlocks</span><span class="p">(</span><span class="nx">npc</span><span class="p">,</span><span class="w"> </span><span class="mf">6</span><span class="p">,</span><span class="w"> </span><span class="mf">40</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Attack based on phase</span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">phase</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">npc</span><span class="p">.</span><span class="nx">getStoredData</span><span class="p">(</span><span class="s2">&quot;phase&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">random</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">();</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">phase</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">random</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">0.3</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">jutsu</span><span class="p">.</span><span class="nx">meteor</span><span class="p">(</span><span class="nx">npc</span><span class="p">,</span><span class="w"> </span><span class="mf">50.0</span><span class="p">,</span><span class="w"> </span><span class="mf">300</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">random</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">0.6</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">jutsu</span><span class="p">.</span><span class="nx">fireballPercent</span><span class="p">(</span><span class="nx">npc</span><span class="p">,</span><span class="w"> </span><span class="mf">10.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.3</span><span class="p">,</span><span class="w"> </span><span class="mf">60</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">jutsu</span><span class="p">.</span><span class="nx">magnetPush</span><span class="p">(</span><span class="nx">npc</span><span class="p">,</span><span class="w"> </span><span class="mf">8.0</span><span class="p">,</span><span class="w"> </span><span class="mf">40</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">jutsu</span><span class="p">.</span><span class="nx">fireball</span><span class="p">(</span><span class="nx">npc</span><span class="p">,</span><span class="w"> </span><span class="mf">25.0</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="handler-vs-individual-imports">Handler vs Individual Imports<a class="headerlink" href="#handler-vs-individual-imports" title="Permanent link">&para;</a></h2>
+<p>Both approaches work the same. The handler just saves you imports.</p>
+<p><strong>Handler (one import):</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">jutsu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Java</span><span class="p">.</span><span class="nx">type</span><span class="p">(</span><span class="s2">&quot;narutodestination.Mathioks.CNPC.CustomNPCJutsuHandler&quot;</span><span class="p">);</span>
+<span class="nx">jutsu</span><span class="p">.</span><span class="nx">fireball</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">npc</span><span class="p">,</span><span class="w"> </span><span class="mf">30.0</span><span class="p">);</span>
+<span class="nx">jutsu</span><span class="p">.</span><span class="nx">meteor</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">npc</span><span class="p">,</span><span class="w"> </span><span class="mf">50.0</span><span class="p">);</span>
+</code></pre></div></p>
+<p><strong>Individual classes (one import per jutsu):</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">Fireball</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Java</span><span class="p">.</span><span class="nx">type</span><span class="p">(</span><span class="s2">&quot;narutodestination.Mathioks.CNPC.Jutsus.FireballJutsu&quot;</span><span class="p">);</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">Tengai</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Java</span><span class="p">.</span><span class="nx">type</span><span class="p">(</span><span class="s2">&quot;narutodestination.Mathioks.CNPC.Jutsus.TengaiJutsu&quot;</span><span class="p">);</span>
+<span class="nx">Fireball</span><span class="p">.</span><span class="nx">cast</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">npc</span><span class="p">,</span><span class="w"> </span><span class="mf">30.0</span><span class="p">);</span>
+<span class="nx">Tengai</span><span class="p">.</span><span class="nx">cast</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">npc</span><span class="p">,</span><span class="w"> </span><span class="mf">50.0</span><span class="p">);</span>
+</code></pre></div></p>
+<p>Use whichever you prefer. The individual classes use <code>cast()</code> / <code>percent()</code>, the handler uses the jutsu name directly.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
