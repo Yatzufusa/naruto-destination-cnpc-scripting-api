@@ -50,6 +50,7 @@ function tick(event) {
 
 | Page | |
 |---|---|
+| [Jutsu Handler (All-in-One)](api/jutsu-handler.md) | Single import for all jutsus and block breaking |
 | [Standard Jutsus](api/jutsus.md) | Fireballs, meteors, water bullets, and 12 more |
 | [Continuous Jutsus](api/continuous-jutsus.md) | Jutsus that fire over time (Magnet Gold Push) |
 | [Jutsu Utilities](api/jutsu-utilities.md) | Breaking jutsu blocks, detection, effects |

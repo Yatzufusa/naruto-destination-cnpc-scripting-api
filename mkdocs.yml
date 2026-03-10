@@ -50,6 +50,7 @@ nav:
     - Modes: api/modes.md
     - Helpers: api/helpers.md
   - NPC Jutsu API:
+    - Jutsu Handler (All-in-One): api/jutsu-handler.md
     - Standard Jutsus: api/jutsus.md
     - Continuous Jutsus: api/continuous-jutsus.md
     - Jutsu Utilities: api/jutsu-utilities.md

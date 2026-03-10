@@ -16,31 +16,13 @@ var MagnetPush = Java.type("narutodestination.Mathioks.CNPC.Jutsus.MagnetGoldPus
 
 ## Methods
 
-### activate(npc)
+### activate(npc) / activate(npc, damage) / activate(npc, damage, cooldown)
 
-Start the jutsu with default damage and cooldown.
+Start the jutsu.
 
 ```js
 MagnetPush.activate(event.npc);
-```
-
----
-
-### activate(npc, damage)
-
-Start with custom damage.
-
-```js
 MagnetPush.activate(event.npc, 10.0);
-```
-
----
-
-### activate(npc, damage, cooldown)
-
-Start with custom damage and cooldown.
-
-```js
 MagnetPush.activate(event.npc, 10.0, 60);
 ```
 
